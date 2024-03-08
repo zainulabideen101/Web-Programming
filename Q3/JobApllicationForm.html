@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="q3_css.css">
+    <script src="q3_js.js"></script>
+    <title>Job Application Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Job Application Form</h2>
+        <form id="job-application-form">
+            <h3>Personal Information</h3>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                <br><br>
+                <label for="email">Email Address:</label>
+
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="street">Street:</label>
+                <input type="text" id="street" name="street" required>
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+                <label for="zipCode">ZIP Code:</label>
+                <input type="text" id="zipCode" name="zipCode" required>
+            </div>
+
+            <h3>Resume and Cover Letter</h3>
+            <div>
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            </div>
+            <div>
+                <label for="coverLetter">Cover Letter:</label>
+                <textarea id="coverLetter" name="coverLetter" rows="3" required></textarea>
+            </div>
+
+            <h3>Education</h3>
+            <div>
+                <label for="educationLevel">Highest Level of Education:</label>
+                <select id="educationLevel" name="educationLevel" required>
+        <option value="">Select</option>
+        <option value="High School">High School</option>
+        <option value="Associate's Degree">Associate's Degree</option>
+        <option value="Bachelor's Degree">Bachelor's Degree</option>
+        <option value="Master's Degree">Master's Degree</option>
+        <option value="PhD">PhD</option>
+      </select>
+            </div>
+            <div>
+                <label for="schoolName">Name of School/University:</label>
+                <input type="text" id="schoolName" name="schoolName" required>
+            </div>
+            <div>
+                <label for="major">Major/Area of Study:</label>
+                <input type="text" id="major" name="major" required>
+                <label for="graduationYear">Graduation Year:</label>
+                <input type="text" id="graduationYear" name="graduationYear" required>
+            </div>
+
+            <h3>Employment History</h3>
+            <div id="employmentHistory">
+                <div class="employment-item">
+                    <label for="jobTitle1">Previous Job Title:</label>
+                    <input type="text" id="jobTitle1" name="jobTitle[]" required>
+                    <label for="companyName1">Company Name:</label>
+                    <input type="text" id="companyName1" name="companyName[]" required>
+                    <label for="employmentDates1">Employment Dates:</label>
+                    <input type="text" id="employmentDates1" name="employmentDates[]" placeholder="MM/YYYY - MM/YYYY" required>
+                    <label for="responsibilities1">Job Responsibilities:</label>
+                    <textarea id="responsibilities1" name="responsibilities[]" rows="3" required></textarea>
+                </div>
+            </div>
+            <button type="button" id="addEmployment">Add Employment</button>
+
+            <h3>Skills</h3>
+            <div>
+                <label for="skills">Relevant Skills:</label>
+                <textarea id="skills" name="skills" rows="3" required></textarea>
+            </div>
+            <div>
+                <label for="certifications">Certifications:</label>
+                <input type="text" id="certifications" name="certifications">
+            </div>
+
+            <h3>Availability</h3>
+            <div>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+                <br><br>
+            </div>
+            <div>
+                <label for="workSchedule">Preferred Work Schedule:</label>
+                <input type="text" id="workSchedule" name="workSchedule">
+            </div>
+            <div>
+                <label for="relocate">Willingness to Relocate:</label>
+                <input type="checkbox" id="relocate" name="relocate">
+            </div>
+
+            <h3>References</h3>
+            <div id="references">
+                <div class="reference-item">
+                    <label for="referenceName1">Reference Name:</label>
+                    <input type="text" id="referenceName1" name="referenceName[]" required>
+                    <label for="referenceContact1">Reference Contact Information:</label>
+                    <input type="text" id="referenceContact1" name="referenceContact[]" required>
+                    <label for="relationship1">Relationship to Applicant:</label>
+                    <input type="text" id="relationship1" name="relationship[]" required>
+                </div>
+            </div>
+            <button type="button" id="addReference">Add Reference</button>
+
+            <h3>Additional Questions</h3>
+            <div>
+                <label for="whyWorkHere">Why do you want to work for this company?</label>
+                <textarea id="whyWorkHere" name="whyWorkHere" rows="4" required></textarea>
+            </div>
+
+            <div>
+                <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                <label for="termsAgreement">I agree to the terms and conditions</label>
+            </div>
+            <div>
+                <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                <label for="privacyPolicy">I acknowledge the Privacy Policy</label>
+                <br> <br>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+        <br><br>
+        <button id="viewAsTableBtn">View Applications as Table</button>
+
+        <table id="applications-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>ZIP Code</th>
+                    <th>Resume</th>
+                    <th>Cover Letter</th>
+                    <th>Education Level</th>
+                    <th>School/University</th>
+                    <th>Major/Area of Study</th>
+                    <th>Graduation Year</th>
+                    <th>Skills</th>
+                    <th>Certifications</th>
+                    <th>Start Date</th>
+                    <th>Preferred Work Schedule</th>
+                    <th>Willingness to Relocate</th>
+                    <th>Reference Name</th>
+                    <th>Reference Contact</th>
+                    <th>Relationship to Applicant</th>
+                    <th>Why Work Here</th>
+                    <th>Terms Agreement</th>
+                    <th>Privacy Policy Acknowledgment</th>
+                </tr>
+            </thead>
+            <tbody id="applications-table-body">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
